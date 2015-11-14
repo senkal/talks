@@ -18,3 +18,14 @@
 #speaker-controls {
     font-size: 0.8em
 }
+
+.reveal pre code {
+    max-height: 800px;
+    font-size: 0.8em;
+}
+
+.reveal .social {
+    margin: 10px 100px;
+    opacity: 0.6;
+    padding: 10px;
+}
