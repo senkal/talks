@@ -1,0 +1,20 @@
+.reveal section img {
+    box-shadow: none;
+}
+.reveal .twitter {
+    background: url("TwitterLogo.png") no-repeat left center;
+    background-size: 50px auto;
+    padding-left: 45px;
+    vertical-align: top;
+}
+.reveal .github {
+    background: url("GitHub-Mark-120px-plus.png") no-repeat left center;
+    background-size: 35px auto;
+    margin-left: 5px;
+    padding-left: 40px;
+    vertical-align: top;
+}
+
+#speaker-controls {
+    font-size: 0.8em
+}
