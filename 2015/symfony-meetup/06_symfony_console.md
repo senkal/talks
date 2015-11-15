@@ -34,6 +34,12 @@
 
 ##Symfony console setup
 
+```yaml
+  "autoload" : {
+    "psr-4": { "": "src" }
+  },
+```
+
 ```bash
 composer require symfony/console
 ```
@@ -47,6 +53,7 @@ symfony/console suggests installing psr/log (For using the console logger)
 ```php
 #!/usr/bin/env php
 <?php
+    namespace MyApp\Command;
     //app/console or bin/console
     require __DIR__ . '/../vendor/autoload.php';
     
@@ -90,3 +97,56 @@ class DeleteGalleryCommand extends Command
 ^
 
 ##Commands plus events
+
+```bash
+composer require symfony/event-dispatcher
+```
+
+```bash
+symfony/event-dispatcher suggests installing symfony/dependency-injection ()
+symfony/event-dispatcher suggests installing symfony/http-kernel ()
+```
+
+```php
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\Console\ConsoleEvents;
+
+$dispather = new EventDispatcher();
+$dispather->addListener(ConsoleEvents::COMMAND, [$consoleListener, 'onCommandStart']);
+$dispather->addListener(ConsoleEvents::TERMINATE, [$consoleListener, 'onCommandTerminate']);
+$dispather->addListener(ConsoleEvents::EXCEPTION, [$consoleListener, 'onCommandException']);
+
+$application = new Application();
+$application->setDispatcher($dispatcher);
+
+...
+$application->run();
+```
+
+^
+
+## Listener implementation example
+
+```php
+namespace MyApp\Listener;
+
+use Symfony\Component\Console\Event\ConsoleCommandEvent;
+use Symfony\Component\Console\Event\ConsoleExceptionEvent;
+use Symfony\Component\Console\Event\ConsoleTerminateEvent;
+
+class ConsoleListener
+{
+    public function onCommandStart(ConsoleCommandEvent $event)
+    {
+    }
+    public function onCommandTerminate(ConsoleTerminateEvent $event)
+    {
+    }
+    public function onCommandException(ConsoleExceptionEvent $event)
+    {
+    }
+
+}
+```
+
+
