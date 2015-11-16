@@ -72,7 +72,7 @@ echo $_GET['var'];
 
 ## Proxy handling
 
-#### Does anybody do nay load balancing/ pre proxy cahcing?
+#### Load balancing/Varnish/3rd party proxies?
 
 ```php
 // only trust proxy headers coming from this IP addresses
