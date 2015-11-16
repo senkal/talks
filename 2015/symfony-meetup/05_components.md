@@ -2,11 +2,10 @@
 
 ## Good to start
 - Symfony console
-- Symfony yaml
 - Twig
+- HttpFoundation
 
 ## Candidate to use full Symfony
 - Doctrine
 - Routing
-- HttpFoundation
 - Kernel
