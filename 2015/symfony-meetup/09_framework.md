@@ -59,3 +59,4 @@ echo call_user_func([$controller, $method]);
 ### HttpKernel
 
 <img src="public/kernel-flow.png" alt="Kernel flow" />
+
