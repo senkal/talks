@@ -25,18 +25,14 @@ function getLogger() {
 
 ^
 
-###Custom events
-
+### Share twig extensions
 ```php
-function dispatchNewOrderEvent($kernel, $customerId, Order $order) {
-    $event = new OrderEvent($customerId, $order);
-    dispatch_event($kernel, $event, 'order.new');
-
-    return $event;
-}
+//...
+$twig = new Twig_Environment($loader);
+$twig->addExtension(get_service('twig.your_company.extension'));
+//...
 ```
-
-### Subrequests
+### Sub Requests
 ```php
 function getInlineRender($uri)
 {
@@ -56,5 +52,3 @@ function getInlineRender($uri)
 {{ render(url('footer', {})) }}
 
 ```
-
-###Opportunity - ESI

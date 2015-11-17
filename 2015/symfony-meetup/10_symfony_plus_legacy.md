@@ -93,13 +93,15 @@ function dispatchEvent($kernel, $event, $eventName)
     $filename = basename($this->server->get('SCRIPT_FILENAME'));
 ```
 
-### Request stack- container init
+### Request stack - container init
 ```php
     $container = $kernel->getContainer();
     $container->enterScope('request');
     $container->get('request_stack')->push($request);
     $container->set('request', $request);
 ```
+
+^
 
 ### kernel.request
 ```php
@@ -114,15 +116,13 @@ function dispatchGetResponseEvent($kernel, $request)
 }
 ```
 
-^
-
 ### Redirect response
-- if redirect dispatch  filter response event(kernel.response)
+dispatch  filter response event(kernel.response)
 ```php
     $event = new FilterResponseEvent($kernel, $request, HttpKernelInterface::MASTER_REQUEST, $response);
 ```
 
-- dispatch kernel.terminate event
+dispatch kernel.terminate event
 ```
     $event = new PostResponseEvent($kernel, $request, $response);
 ```  
