@@ -1,11 +1,7 @@
-#Use components
+## Use components
 
-## Good to start
 - Symfony console
 - Twig
-- HttpFoundation
+- Symfony HttpFoundation
 
-## Candidate to use full Symfony
-- Doctrine
-- Routing
-- Kernel
+

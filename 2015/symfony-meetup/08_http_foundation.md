@@ -1,11 +1,10 @@
-# HttpFoundation
+# Http Foundation
 - Can be used in isolation
 - Object oriented, standardized approach to global variables
 - Abstract Session handling with nice interface
 - Cover edge cases 
 - Heart of what PHP was created for
 - Tests - can mock/fake request
-
 
 ^
 
