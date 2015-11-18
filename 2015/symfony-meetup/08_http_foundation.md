@@ -23,7 +23,7 @@ Request
    
 Response
 ```php
-$response->prepare($request); //is valid HTTP response
+$response->prepare($request); //is valid HTTP response, useful feature
 $response->send() // send headers and display content
 ```
 
