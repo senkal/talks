@@ -27,7 +27,7 @@ Note:
 - Lack of skills
 - Lack of experience
 - Legacy code poor code quality
-- No Unit test/not testable code
+- No unit test/not testable code
 
 Note:
 **general** We call it legacy for a reason

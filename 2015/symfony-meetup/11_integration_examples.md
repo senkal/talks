@@ -29,7 +29,7 @@ function getLogger() {
 ```php
 //...
 $twig = new Twig_Environment($loader);
-$twig->addExtension(get_service('twig.your_company.extension'));
+$twig->addExtension(getService('twig.your_company.extension'));
 //...
 ```
 ### Sub Requests
