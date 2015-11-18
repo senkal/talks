@@ -57,7 +57,6 @@ echo $_GET['var'];
 ## Session API
 
 - Abstract php session related function
-- With attributes you can set Request specific data
 - Do not use legacy session at the same time
 - Ability to mock session- `MockFileSessionStorage`
 - Session storage handler:

@@ -16,7 +16,6 @@ Mention will focus on Symfony components, common libraries and to bootstrap Symf
 ## Full rewrite
 - Not always possible
 - Require good quality code or business logic experts
-- Late feedback - late going live
 - Need business logic expert/knowledge
 
 Note:
@@ -24,11 +23,9 @@ Time consuming- results visible in a long time period
 
 ^
 
-## Page by page
-- Touches many features at once- big risk of errors
+## Page by page/set of features
+- Touches many features at once - big risk of errors
 - That feature/page needs to be closed for new functionality during the rewrite, hard to catch up
-- Hard to roll back - need to maintain two versions of the same page
-- Do not need to interact with old code, stand alone version
 
 Note:
 Separation by „user experience”
@@ -43,10 +40,9 @@ hard at the beginning, easier later
 
 ## Microservices
 - Extract features from the "internal" point of view
-- Non monolith system
 - Many examples - easier to apply generic logic
-- New feature, if broken, can cause issues in whole application
-- Easier A/B possibility, on/off flags
+- Resource consuming
+- Not always needed
 - Communicate through general interface
 
 Note:
@@ -64,8 +60,8 @@ Resource consuming, more complicated deployment, maintenance etc
 ## Integrate components
 - Ability to jump to full Symfony
 - Great features out of the box
-- Easier A/B possibility, on/off flags
-- The same language
+- Follow good practices
+- Symfony is cool!
 
 Note:
 Company point of view, features
@@ -81,10 +77,7 @@ Will focus on this
 ## Bootstrap full Symfony next to legacy application
 - Next step after components
 - Ability to switch gradually to full Symfony
-- Easy A/B/flags testability
-- Still monolite system
-- The same technology
-- Do it ASAP
+- Symfony is cool!
 
 Note:
 Similar to components
@@ -92,3 +85,11 @@ Similar to components
 Symfony is cool
 
 Will focus on this
+
+^
+
+#What is the worst case scenario
+- No long freezes = no rewrites
+- Can not do page by page/feature by feature
+- The only way to start moving to better solutions is to deploy them!
+

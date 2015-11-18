@@ -26,7 +26,9 @@ function bootSymfonyKernel($projectDir, $environment, $debug) {
 }
 ```
 
-# App flow
+^
+
+## App flow
 
 ### Init
 ```php

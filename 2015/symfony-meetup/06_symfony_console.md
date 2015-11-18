@@ -2,7 +2,7 @@
 - Can be used in isolation
 - Easy to integrate because of cron jobs nature
 - Small chance to introduce bugs in other part of the application
-- Can still use buggy, legacy code
+- Can still use legacy code
 
 ^
 
@@ -13,7 +13,7 @@
        die('Not a cli');
     }
     $deleteQty = 0;
-    $galeryId = $argv[1];
+    $galleryId = $argv[1];
     $checkQ = mysql_query("SELECT * FROM galery WHERE galery_id='$galeryId' LIMIT 1") 
         or die(mysql_error());
     

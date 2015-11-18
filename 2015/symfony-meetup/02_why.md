@@ -8,8 +8,6 @@
 - „technology jump”
 - investor search
 - "nobody" wants to write bad code:)
-- candies
-- share my personal experience
 
 Note:
 **candies** Use all the buzz words like Symfony, composer etc
