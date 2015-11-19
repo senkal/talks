@@ -1,4 +1,3 @@
-**Symfony in legacy**
 ```php
 function bootSymfonyKernel($projectDir, $environment, $debug) {
     require_once $projectDir.'/app/bootstrap.php.cache';
