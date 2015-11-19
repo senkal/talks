@@ -2,18 +2,15 @@
 
 ### Use container
 ```php
-function getParameter($id) {
-    global $kernel;
-
+function getParameter(\AppKernel $kernel, $id) {
     return $kernel->getContainer()->getParameter($id);
 }
 
-function hasService($id) {
-    global $kernel;
+function hasService(\AppKernel $kernel, $id) {
     return $kernel->getContainer()->has($id);
 }
 
-function getService($id, $kernal) {
+function getService(\AppKernel $kernel, $id) {
     return $kernel->getContainer()->getService($id);
 }
 
