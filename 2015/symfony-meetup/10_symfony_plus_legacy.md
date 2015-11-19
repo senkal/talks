@@ -1,4 +1,4 @@
-###### Symfony in legacy
+**Symfony in legacy**
 ```php
 function bootSymfonyKernel($projectDir, $environment, $debug) {
 
