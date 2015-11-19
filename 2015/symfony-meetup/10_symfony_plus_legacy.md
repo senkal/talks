@@ -24,9 +24,9 @@ function bootSymfonyKernel($projectDir, $environment, $debug) {
     
     return $kernel;
 }
-
-Please check Jakub Zalas presentation [To kernel and back](https://speakerdeck.com/jakzal/into-the-kernel-and-back
 ```
+Please check Jakub Zalas presentation [To kernel and back](https://speakerdeck.com/jakzal/into-the-kernel-and-back
+
 
 ^
 
