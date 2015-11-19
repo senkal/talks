@@ -1,13 +1,11 @@
 **Symfony in legacy**
 ```php
 function bootSymfonyKernel($projectDir, $environment, $debug) {
-
     require_once $projectDir.'/app/bootstrap.php.cache';
     require_once $projectDir.'/app/AppKernel.php';
 
     $kernel = new \AppKernel($environment, $debug);
     $kernel->boot();
-    
     if ('dev' === $environment) 
     {
         Debug::enable();
@@ -16,14 +14,12 @@ function bootSymfonyKernel($projectDir, $environment, $debug) {
     $request = Request::createFromGlobals();
     $request->attributes->set('is_legacy', true);
 
-    //faking a front controller for sf2 route matching purposes (baseUrl)
     $request->server->set('SCRIPT_FILENAME', 'app.php');
 
     $container = $kernel->getContainer();
     $container->enterScope('request');
     $container->get('request_stack')->push($request);
     $container->set('request', $request);
-    
     $getResponseEvent = dispatchGetResponseEvent($kernel, $request); //kernel.request
     handleRedirectResponse($kernel, $getResponseEvent->getResponse());
     
