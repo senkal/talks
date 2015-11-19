@@ -33,8 +33,8 @@ $twig->addExtension(getService('twig.your_company.extension'));
 ```php
 function getInlineRender($uri)
 {
-        $inlineRenderer = get_service('fragment.renderer.inline');
-        $request = \Symfony\Component\HttpFoundation\Request::create($uri, 'GET', array(), $_COOKIE, $_FILES, $_SERVER, '');
+        $inlineRenderer = getService('fragment.renderer.inline');
+        $request = Request::create($uri, 'GET', array(), $_COOKIE, $_FILES, $_SERVER, '');
         $request->setSession(get_service('request_stack')->getMasterRequest()->getSession());
 
         return $inlineRenderer->render($uri, $request)->getContent();
