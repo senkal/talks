@@ -7,6 +7,11 @@ function bootSymfonyKernel($projectDir, $environment, $debug) {
 
     $kernel = new \AppKernel($environment, $debug);
     $kernel->boot();
+    
+    if ('dev' === $environment) 
+    {
+        Debug::enable();
+    }
 
     $request = Request::createFromGlobals();
     $request->attributes->set('is_legacy', true);
@@ -41,7 +46,7 @@ function bootSymfonyKernel($projectDir, $environment, $debug) {
 
 ### Event dispatcher
 ```php
-function dispatchEvent($kernel, $event, $eventName)
+function dispatchEvent(\AppKernel $kernel, $event, $eventName)
 {
     $eventDispatcher = $kernel->getContainer()->get('event_dispatcher');
     $eventDispatcher->dispatch($eventName, $event);
@@ -58,7 +63,7 @@ function dispatchEvent($kernel, $event, $eventName)
 
 #### WHy?
 ```php
-    // kernel::handle
+    // kernel::handle()
     // load controller
     if (false === $controller = $this->resolver->getController($request)) {
         throw new NotFoundHttpException(sprintf('Unable to find the controller for path "%s". The route is wrongly configured.', $request->getPathInfo()));
@@ -109,7 +114,7 @@ function dispatchEvent($kernel, $event, $eventName)
 ```php
 $getResponseEvent = dispatchGetResponseEvent($kernel, $request); //kernel.request
 
-function dispatchGetResponseEvent($kernel, $request)
+function dispatchGetResponseEvent(\AppKernel $kernel, $request)
 {
     $event = new GetResponseEvent($kernel, $request, HttpKernelInterface::MASTER_REQUEST);
     dispatchEvent($kernel, $event, KernelEvents::REQUEST);
